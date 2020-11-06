@@ -4,4 +4,8 @@ This web application made by students in Cairo University at IEEE summer competi
 
 ### How to run it?
 
-Just open home.html but first make sure that you download everything in the reposatory.
+First download all things in this repo then put folders: free.rar - hardcore.zip - intermediate.zip, in folder called by "ex" and extract then.
+
+Then extract the css.zip file.
+
+Then open "home.html" and browse the app.
