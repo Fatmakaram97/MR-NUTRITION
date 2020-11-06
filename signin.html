@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
+    <title>sign in  </title>
+	<style>
+	body {
+		margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			background: url(n.jpg);
+			background-size: cover;
+			overflow: scroll;
+	}
+	.box h2 {
+			color: aliceblue;
+			font-family: sans-serif ;
+			padding: 0 ;
+			margin-bottom: 30px ;
+	}
+	.box {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 400px;
+			padding: 40px;
+			background: rgba(0,0,0,.8);
+			box-sizing: border-box;
+			box-shadow: 0 15px 25px rgba(0,0,0,.5);
+			border-radius: 10px;
+	}
+	.box .inputbox {
+			position: relative;
+	}
+	.box .inputbox input {
+			width: 100% ;
+			padding: 10px 0 ;
+			color: aliceblue;
+			margin-bottom: 30px;
+			border: none ;
+			background: transparent ;
+			outline: none ;
+			font-size: 16px ;
+			letter-spacing: 1px ;
+			border-bottom: 1px solid #fff ;
+	}
+	.box .inputbox label {
+			position: absolute ;
+			top: 0;
+			left: 0 ;
+			padding: 10px 0 ;
+			color: aliceblue ;
+			font-size: 16px ;
+			pointer-events: none ;
+			transition: 0.5s ;
+	}
+	.box .inputbox input:focus ~ label,
+	.box .inputbox input:valid ~ label
+	{
+			top: -20px ;
+			left: 0px ;
+			color: aqua ;
+			font-size: 12px ;
+	}
+	.box input[type="submit"]
+	{
+		background: transparent;
+		border: none;
+		background-color: #03a9f4 ;
+		color: #fff ;
+		padding: 10px ;
+		width: 90px;
+		border-radius: 5px ;
+	}
+	#f {
+			display: inline-block ;
+			position: relative ;
+			width: 40% ;
+			margin-right: 5px ;
+	}
+	</style>
+</head>
+<body>
+
+        	<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+		<div class="container-fluid" >
+		<a  class="navbar-brand" href="#"><img src="logo.png"> </a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+					<span class="navbar-toggler-icon"></span>
+
+		</button>
+
+		<div class="collapse navbar-collapse" id="#navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active"><a class="nav-link" href="home.html">Home</a>	</li>
+				<li class="nav-item"><a class="nav-link" href="#">About</a>	</li>
+				<li class="nav-item"><a class="nav-link" href="#">Team</a>	</li>
+				<li class="nav-item"><a class="nav-link" href="#">Conect</a>	</li>
+				<li class="nav-item"><a class="nav-link" href="#">Services</a>	</li>
+
+
+			</ul>
+
+		</div>
+
+    </div>
+	</nav>
+
+	<div class="box" >
+		<h2>sign in  </h2>
+		<form method="post" action="/signUp.php" onsubmit="return validateForm()">
+			<div id="f" class="inputbox">
+				<input type="text" name="fname" required="">
+				<label>first name</label >
+
+			</div>
+
+			<div id="f" class="inputbox">
+				<input type="text" name="lname" required="">
+				<label>last name</label >
+
+			</div>
+
+
+			<div class="inputbox">
+				<input type="email" name="mail" required="">
+				<label>E-mail</label >
+
+			</div>
+
+			<div class="inputbox">
+				<input type="password" name="password" required="">
+				<label>password</label >
+
+			</div>
+			<input  type="submit" name="" value="Submit">
+
+
+
+		</form>
+
+
+	</div>
+
+
+
+
+</body>
+</html>

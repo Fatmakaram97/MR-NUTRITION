@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Choose food</title>
+    <style>
+    body {
+    	margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: url(5.jpg);
+        background-size: cover;
+        overflow: scroll;
+    }
+
+      .table{
+        color:White;
+        margin: 40px;
+        padding: 40px;
+      }
+
+      .p{
+        color: White;
+      text-align: left;
+      }
+      .s{
+          color: White;
+        position: absolute;
+         left: 55%;
+         top: 0;
+      }
+
+  .vl {
+  border-left: 6px solid White;
+  height: 800px;
+  position: absolute;
+  left: 52%;
+  margin-left: -3px;
+  top: 0;
+}
+.b1 {
+background-color: White; /* Green */
+border: 4px solid black;
+color: black;
+text-align: center;
+font-size: 30px;
+ }
+    </style>
+  </head>
+  <body>
+    <?php
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "mysql";
+    $dbname = "competition";
+
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // use exec() because no results are returned
+        $conn->exec($sqlinsert);
+        header('Location:  food.html');
+        exit();
+        }
+    catch(PDOException $e)
+        {
+        echo $sqlinsert . "<br>" . $e->getMessage();
+        }
+
+    $conn = null;
+
+    ?>
+    <div class="p">
+    <h2>Food table</h2>
+    <div class="table">
+    <table border="3" style="width:50%">
+      <tr>
+        <th>Food Icon</th>
+        <th>Properties</th>
+      </tr>
+      <tr>
+        <td><img src="https://www.seriouseats.com/recipes/images/2017/08/5708631471_06fed03518_o.jpg" alt="eggs" width="150" hight="100"></td>
+        <td>Bioled egg<br> Protein= 12.58g    Fat= 10.61g    Carbohydrates= 1.12g    Calories= 155g<br>
+        <button onclick="pushFunction()">Add to select food</button>   <button onclick="removeElement()">Remove</button></td>
+      </tr>
+      <tr>
+        <td><img src="https://i0.wp.com/superbekala.com/wp-content/uploads/2019/04/%D8%B4%D9%8A%D8%AF%D8%B1-%D8%B6%D9%8A%D8%A7%D9%81%D9%87.jpg?fit=800%2C800&ssl=1" alt="cheese" width="150" hight="100"></td>
+        <td>100gm Cheddar<br> Protein= 22.87g    Fat= 33.31g    Carbohydrates= 3.09g    Calories= 404g<br>
+        <button onclick="pushFunction1()">Add to select food</button>   <button onclick="removeElement1()">Remove</button></td>
+      </tr>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/2836/2982/products/Feta_hero_grande.jpg?v=1529434179" alt="cheese" width="150" hight="100"></td>
+        <td>100gm feta cheese<br>  Protein= 14.21g    Fat= 21.28g    Carbohydrates= 4.09g    Calories= 264g<br>
+        <button onclick="pushFunction2()">Add to select food</button>   <button onclick="removeElement2()">Remove</button></td>
+      </tr>
+      <tr>
+        <td><img src="http://caloriecounter.io/wp-content/uploads/bfi_thumb/milk-calories-mgdkkfid9n5rn4j75sgstjiwc2qxz1fzxz7yezmgd8.jpg" alt="milk" width="150" hight="100"></td>
+        <td>100gm Milk<br>  Protein= 3.33g    Fat= 3.46g    Carbohydrates= 4.74g    Calories= 63g<br>
+        <button onclick="pushFunction3()">Add to select food</button>   <button onclick="removeElement3()">Remove</button></td>
+      </tr>
+      <tr>
+        <td><img src="https://www.caloriescalc.com/wp-content/uploads/2016/09/Poultry-Products-1-300x200.jpg" alt="chicken" width="150" hight="100"></td>
+        <td>100gm chicken<br>  Protein= 22.84g    Fat= 17.53g    Carbohydrates= 9.03g    Calories= 291g<br>
+        <button onclick="pushFunction4()">Add to select food</button>   <button onclick="removeElement4()">Remove</button></td>
+      </tr>
+      <tr>
+        <td><img src="https://www.tasteofhome.com/wp-content/uploads/2018/08/Smitten_Tyler-Robinson-with-Blind-Renaissance.jpg" alt="apple" width="150" hight="100"></td>
+        <td>100gm apples<br>  Protein= 0.26g    Fat= 0.17g    Carbohydrates= 13.81g    Calories= 52g<br>
+        <button onclick="pushFunction5()">Add to select food</button>   <button onclick="removeElement5()">Remove</button></td>
+      </tr>
+
+    </table>
+    </div>
+    </div>
+    <div class="vl"></div>
+    <div class="s">
+      <h2>Selected food:</h2>
+    <p id="geeks"></p>
+
+    <h3>Proteins=</h3>
+  <p id="Pro"></p>
+
+  <h3>Fats=</h3>
+<p id="Fat"></p>
+
+  <h3>Carbohydrates=</h3>
+<p id="Carbo"></p>
+
+<h3>Calories=</h3>
+<p id="Cal"></p>
+
+<button class="b1" type="button" onclick="alert('Hope you abide by your selected food.. Visit us tomorrow to choose again.')">Done</button>
+
+  </div>
+  <script>
+        var list = [];
+        pro=0;
+        fat=0;
+        carbo=0;
+        cal=0;
+        document.getElementById("geeks").innerHTML = list;
+        function pushFunction() {
+            list.push("Egg",);
+            document.getElementById("geeks").innerHTML = list;
+            pro+=12.58;
+             document.getElementById("Pro").innerHTML = pro;
+             fat+=10.61;
+             document.getElementById("Fat").innerHTML = fat;
+             carbo+=1.12;
+             document.getElementById("Carbo").innerHTML = carbo;
+             cal+=155;
+             document.getElementById("Cal").innerHTML = cal;
+        }
+
+        function removeElement(){
+          const valuesToRemove = ["Egg"]
+          list = list.filter(item => !valuesToRemove.includes(item))
+          document.getElementById("geeks").innerHTML = list;
+          pro-=12.58;
+           document.getElementById("Pro").innerHTML = pro;
+           fat-=10.61;
+           document.getElementById("Fat").innerHTML = fat;
+           carbo-=1.12;
+           document.getElementById("Carbo").innerHTML = carbo;
+           cal-=155;
+           document.getElementById("Cal").innerHTML = cal;
+        }
+
+        function pushFunction1() {
+            list.push("100gm Cheddar",);
+            document.getElementById("geeks").innerHTML = list;
+            pro+=22.87;
+             document.getElementById("Pro").innerHTML = pro;
+             fat+=33.31;
+             document.getElementById("Fat").innerHTML = fat;
+             carbo+=3.09;
+             document.getElementById("Carbo").innerHTML = carbo;
+             cal+=404;
+             document.getElementById("Cal").innerHTML = cal;
+           }
+
+        function removeElement1(){
+          const valuesToRemove = ["100gm Cheddar"]
+          list = list.filter(item => !valuesToRemove.includes(item))
+          document.getElementById("geeks").innerHTML = list;
+          pro-=22.87;
+           document.getElementById("Pro").innerHTML = pro;
+           fat-=33.31;
+           document.getElementById("Fat").innerHTML = fat;
+           carbo-=3.09;
+           document.getElementById("Carbo").innerHTML = carbo;
+           cal-=404;
+           document.getElementById("Cal").innerHTML = cal;
+        }
+
+        function pushFunction2() {
+            list.push("100gm feta cheese",);
+            document.getElementById("geeks").innerHTML = list;
+            pro+=14.21;
+             document.getElementById("Pro").innerHTML = pro;
+             fat+=21.28;
+             document.getElementById("Fat").innerHTML = fat;
+             carbo+=4.09;
+             document.getElementById("Carbo").innerHTML = carbo;
+             cal+=264;
+             document.getElementById("Cal").innerHTML = cal;
+        }
+
+        function removeElement2(){
+          const valuesToRemove = ["100gm feta cheese"]
+          list = list.filter(item => !valuesToRemove.includes(item))
+          document.getElementById("geeks").innerHTML = list;
+          pro-=14.21;
+           document.getElementById("Pro").innerHTML = pro;
+           fat-=21.28;
+           document.getElementById("Fat").innerHTML = fat;
+           carbo-=4.09;
+           document.getElementById("Carbo").innerHTML = carbo;
+           cal-=264;
+           document.getElementById("Cal").innerHTML = cal;
+        }
+
+
+        function pushFunction3() {
+            list.push("100gm milk",);
+            document.getElementById("geeks").innerHTML = list;
+            pro+=3.33;
+             document.getElementById("Pro").innerHTML = pro;
+             fat+=3.46;
+             document.getElementById("Fat").innerHTML = fat;
+             carbo+=4.74;
+             document.getElementById("Carbo").innerHTML = carbo;
+             cal+=63;
+             document.getElementById("Cal").innerHTML = cal;
+        }
+
+        function removeElement3(){
+          const valuesToRemove = ["100gm milk"]
+          list = list.filter(item => !valuesToRemove.includes(item))
+          document.getElementById("geeks").innerHTML = list;
+          pro-=3.33;
+           document.getElementById("Pro").innerHTML = pro;
+           fat-=3.46;
+           document.getElementById("Fat").innerHTML = fat;
+           carbo-=4.74;
+           document.getElementById("Carbo").innerHTML = carbo;
+           cal-=63;
+           document.getElementById("Cal").innerHTML = cal;
+        }
+
+
+        function pushFunction4() {
+            list.push("100gm chicken",);
+            document.getElementById("geeks").innerHTML = list;
+            pro+=22.84;
+             document.getElementById("Pro").innerHTML = pro;
+             fat+=17.53;
+             document.getElementById("Fat").innerHTML = fat;
+             carbo+=9.03;
+             document.getElementById("Carbo").innerHTML = carbo;
+             cal+=291;
+             document.getElementById("Cal").innerHTML = cal;
+        }
+
+        function removeElement4(){
+          const valuesToRemove = ["100gm chicken"]
+          list = list.filter(item => !valuesToRemove.includes(item))
+          document.getElementById("geeks").innerHTML = list;
+          pro-=22.84;
+           document.getElementById("Pro").innerHTML = pro;
+           fat-=17.53;
+           document.getElementById("Fat").innerHTML = fat;
+           carbo-=9.03;
+           document.getElementById("Carbo").innerHTML = carbo;
+           cal-=291;
+           document.getElementById("Cal").innerHTML = cal;
+        }
+
+        function pushFunction5() {
+            list.push("100gm apples",);
+            document.getElementById("geeks").innerHTML = list;
+            pro+=0.26;
+             document.getElementById("Pro").innerHTML = pro;
+             fat+=0.17;
+             document.getElementById("Fat").innerHTML = fat;
+             carbo+=13.81;
+             document.getElementById("Carbo").innerHTML = carbo;
+             cal+=52;
+             document.getElementById("Cal").innerHTML = cal;
+        }
+
+        function removeElement5(){
+          const valuesToRemove = ["100gm apples"]
+          list = list.filter(item => !valuesToRemove.includes(item))
+          document.getElementById("geeks").innerHTML = list;
+          pro-=0.26;
+           document.getElementById("Pro").innerHTML = pro;
+           fat-=0.17;
+           document.getElementById("Fat").innerHTML = fat;
+           carbo-=13.81;
+           document.getElementById("Carbo").innerHTML = carbo;
+           cal-=52;
+           document.getElementById("Cal").innerHTML = cal;
+        }
+
+    </script>
+
+  </body>
+</html>

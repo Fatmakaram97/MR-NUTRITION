@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>information </title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
+
+
+ <style>
+	body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: url(n.jpg);
+	background-size: cover;
+}
+.box {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	padding: 40px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	border-radius: 10px;
+}
+.box h2 {
+	color: aliceblue ;
+	text-align: center;
+	padding: 0;
+	margin: 0 0 30px  ;
+}
+.box .inputbox {
+	position: relative ;
+}
+.box .inputbox input {
+	width: 100% ;
+	padding: 10px 0 ;
+	font-size: 16px ;
+	letter-spacing: 1px ;
+	background: transparent ;
+	border: none ;
+	outline: none ;
+	border-bottom: 1px solid #fff ;
+	color: #fff ;
+	margin-bottom: 40px;
+}
+.box .inputbox label {
+letter-spacing: 1px ;
+	position: absolute;
+	top: 0 ;
+	left: 0;
+	padding: 10px 0 ;
+	font-size: 16px ;
+	color: aliceblue;
+	pointer-events: none;
+	transition: .5s ;
+}
+.box .inputbox input:focus ~ label,
+.box .inputbox input:valid ~ label
+{
+	top: -20px ;
+	left: 0px ;
+	color: aqua ;
+	font-size: 12px ;
+}
+.box input[type="submit"]
+{
+background: transparent;
+border: none;
+background-color: #03a9f4 ;
+color: #fff ;
+padding: 10px ;
+width: 90px;
+border-radius: 5px ;
+}
+#Daily {
+	display: inline-block;
+	margin-bottom:40px ;
+	width: 200px ;
+	background: transparent;
+	color: #fff;
+	border: 3px solid  ;
+}
+#type {
+	display: inline-block;
+	margin-bottom: 20px ;
+	width: 200px ;
+	background: transparent;
+	color: #fff;
+	border: 3px solid  ;
+}
+#object{
+	display: inline-block;
+	margin-bottom: 20px ;
+	width: 200px ;
+	background: transparent;
+	color: #fff;
+	border: 3px solid  ;
+}
+option {
+	color: #000;
+}
+	</style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+		<div class="container-fluid" >
+		<a  class="navbar-brand" href="#"><img src="logo.png"> </a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+					<span class="navbar-toggler-icon"></span>
+
+		</button>
+
+		<div class="collapse navbar-collapse" id="#navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active"><a class="nav-link" href="home.html">Home</a>	</li>
+				<li class="nav-item"><a class="nav-link" href="#">About</a>	</li>
+				<li class="nav-item"><a class="nav-link" href="#">Team</a>	</li>
+				<li class="nav-item"><a class="nav-link" href="#">Conect</a>	</li>
+				<li class="nav-item"><a class="nav-link" href="#">Services</a>	</li>
+
+
+			</ul>
+
+		</div>
+
+    </div>
+	</nav>
+
+
+	<div class="box" >
+		<h2>Info</h2>
+		<form method="post" action="/info.php" onsubmit="return validateForm()">
+			<div class="inputbox">
+				<input type="text" name="email" required="">
+				<label>Email</label >
+
+			</div>
+			<div class="inputbox">
+				<input type="text" name="weight" required="">
+				<label>Weight</label >
+
+			</div>
+
+			<div class="inputbox">
+				<input type="text" name="height" required="">
+				<label>height in cm</label >
+
+			</div>
+
+
+
+			<div class="inputbox">
+				<input type="text" name="age" required="">
+				<label>age</label >
+
+			</div>
+			<div class="inputbox">
+							<select name="gender"  id="type">
+							<option >gender</option> <option>male</option>  <option>female</option>
+							</select>
+
+						</div>
+			<div class="inputbox">
+				<select type="text" name="objective" id="object">
+					<option>Your objective</option> <option>loss weight</option> <option>increase muscles</option>
+					<option>Balance(fixed weight)</option>
+				</select>
+
+
+			</div>
+
+<div class="inputbox">
+				<select name="type"  id="type">
+				<option >type</option> <option>normal</option>  <option>vegetarian</option>
+				</select>
+
+			</div>
+
+
+			<div class="inputbox">
+				<select name="Dailyy" id="Daily" >
+					<option >daily activity</option> <option>go to school everyday </option> <option>regular exercises </option>
+					<<option>athletic person</option>
+				</select>
+
+
+			</div>
+
+
+
+			<input  type="submit" name="" value="Submit" id="submit">
+
+
+
+
+		</form>
+
+
+
+	</div>
+
+
+
+
+
+</body>
+</html>
