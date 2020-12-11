@@ -1,4 +1,4 @@
-# NUTRITION GUARD
+# MR-NUTRITION
 
 This web application made by me at IEEE summer competition. And I won the second place in the competition.
 
