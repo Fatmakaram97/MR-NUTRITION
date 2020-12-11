@@ -9,3 +9,7 @@ First download all things in this repo then put folders: free.rar - hardcore.zip
 Then extract the css.zip file.
 
 Then open "home.html" and browse the app.
+
+### Demo for the project
+
+To see the demo video for the project visit this link: https://drive.google.com/file/d/1WE3r_SBf65ReoxmKRcMlYIz8CuPhEOkG/view
