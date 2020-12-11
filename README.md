@@ -1,6 +1,6 @@
-# MR-NUTRITION
+# NUTRITION GUARD
 
-This web application made by students in Cairo University at IEEE summer competition. And we won the second place in the competition.
+This web application made by me at IEEE summer competition. And I won the second place in the competition.
 
 ### Demo for the project
 
