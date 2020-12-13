@@ -4,7 +4,7 @@ This web application made by me at IEEE summer competition. And I won the second
 
 ### Demo for the project
 
-To see the demo video for the project visit this link: https://drive.google.com/file/d/1WE3r_SBf65ReoxmKRcMlYIz8CuPhEOkG/view
+To see the demo video for the project visit this link: https://drive.google.com/file/d/1gKYeLFk7budbxC1bMDAwXspt8Qjfjvip/view
 
 ### How to run it?
 
